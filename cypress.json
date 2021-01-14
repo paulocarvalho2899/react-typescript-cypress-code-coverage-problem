@@ -1,0 +1,24 @@
+{
+    "env": {
+        "PROXY_API_URL_DEFAULT": "http://localhost:3000",
+        "AUTH": {
+            "owner_username": "cypressOwner",
+            "owner_password": "%&uVirmFLE09kcYK&xzTosdYTI4JlOa9AoJSuHSbEx^7Bmd",
+            "owner_email": "cypressOwner@securityside.com",
+
+            "register": {
+                "url": "/register"
+            },
+            "login": {
+                "url": "/login"
+            }
+        }
+    },
+    "viewportWidth": 1000,
+    "viewportHeight": 1000,
+    "testFiles": "**/*.spec.*",
+    "experimentalComponentTesting": true,
+    "componentFolder": "cypress/components",
+    "suportFile": "cypress/support/index.ts",
+    "pluginsFile": "cypress/plugins/index.ts"
+}

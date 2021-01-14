@@ -1,0 +1,100 @@
+{
+	"name": "react-typescript-cypress-code-coverage-problem",
+	"version": "1.0.0",
+	"private": false,
+	"dependencies": {
+		"@testing-library/dom": "^7.5.1",
+		"@testing-library/jest-dom": "^5.7.0",
+		"@testing-library/react": "^10.0.4",
+		"@testing-library/user-event": "^10.1.0",
+		"react": "^16.13.1",
+		"react-dom": "^16.13.1",
+		"react-scripts": "3.4.1",
+		"typescript": "^3.8.3"
+	},
+	"scripts": {
+		"start": "react-scripts -r @cypress/instrument-cra start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject",
+		"cypress:open": "cypress open",
+		"cypress:run": "cypress run",
+		"cypress:run:e2e:chrome": "cypress run --spec ./cypress/integration/e2e/e2e.spec.ts --browser=chrome",
+		"cypress:run:e2e:edge": "cypress run --spec ./cypress/integration/e2e/e2e.spec.ts --browser=edge",
+		"cypress:run:e2e:firefox": "cypress run --spec ./cypress/integration/e2e/e2e.spec.ts --browser=firefox",
+		"ci:cypress:run:e2e:chrome": "start-test start :3000 cypress:run:e2e:chrome",
+		"ci:cypress:run:e2e:edge": "start-test start :3000 cypress:run:e2e:edge",
+		"ci:cypress:run:e2e:firefox": "start-test start :3000 cypress:run:e2e:firefox",
+		"cypress:run:units": "cypress run --spec './cypress/integration/units/**/*'",
+		"report:coverage": "nyc report --reporter=html",
+		"report:coverage:text": "nyc report --reporter=text",
+		"report:coverage:summary": "echo 'Report do not implemented'",
+		"report:coverage:summary2": "nyc report --reporter=text-summary"
+	},
+	"eslintConfig": {
+		"extends": "react-app"
+	},
+	"nyc": {
+		"extends": "@istanbuljs/nyc-config-typescript",
+		"extension": [
+			".tsx",
+			".ts",
+			".js"
+		],
+		"include": [
+			"src/**/*.tsx",
+			"src/**/*.ts",
+			"src/**/*.js"
+		],
+		"exclude": [
+			"cypress/",
+			"assets/",
+			"test/",
+			"src/serviceWorker.js"
+		],
+		"all": true
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"devDependencies": {
+		"@cypress/code-coverage": "^3.9.0",
+		"@cypress/instrument-cra": "^1.4.0",
+		"@cypress/react": "^4.16.3",
+		"@istanbuljs/nyc-config-typescript": "^1.0.1",
+		"@types/jest": "^25.2.1",
+		"@types/node": "^13.13.5",
+		"@types/react": "^16.9.34",
+		"@types/react-dom": "^16.9.7",
+		"@typescript-eslint/eslint-plugin": "^2.25.0",
+		"@typescript-eslint/parser": "^2.25.0",
+		"babel-eslint": "^10.1.0",
+		"babel-plugin-istanbul": "^6.0.0",
+		"babel-plugin-transform-class-properties": "^6.24.1",
+		"cypress": "^6.2.1",
+		"eslint": "^6.8.0",
+		"eslint-config-prettier": "^6.10.1",
+		"eslint-plugin-import": "^2.20.1",
+		"eslint-plugin-import-helpers": "^1.0.2",
+		"eslint-plugin-jsx-a11y": "^6.2.3",
+		"eslint-plugin-prettier": "^3.1.2",
+		"eslint-plugin-react": "^7.19.0",
+		"eslint-plugin-react-hooks": "^2.5.1",
+		"eslint-plugin-sonarjs": "^0.5.0",
+		"istanbul-lib-coverage": "^3.0.0",
+		"nyc": "^15.1.0",
+		"prettier": "2.1.1",
+		"source-map-support": "^0.5.19",
+		"start-server-and-test": "^1.11.7",
+		"ts-node": "^9.1.1"
+	}
+}
